@@ -29,7 +29,7 @@
 <body>
     <header>
         <h1>Albert Gomez</h1>
-        <p>Software Developer</p>
+        <p>My cyber journey</p>
     </header>
 
     <section>
@@ -55,7 +55,39 @@
 <script>
 console.log("Hello from JavaScript!");
 document.querySelector('h1').style.color = 'blue';
-</script>
+</script>// Fetch your repositories
+fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos`)
+    .then(response => response.json())
+    .then(repos => {
+        const container = document.getElementById('projects-container');
+
+        // Clear the loading message
+        container.innerHTML = '';
+
+        // Show only public repos, sorted by stars
+        const sortedRepos = repos
+            .filter(repo => !repo.fork) // No forked repos
+            .sort((a, b) => b.stargazers_count - a.stargazers_count)
+            .slice(0, 6); // Show top 6
+
+        // Create a card for each project
+        sortedRepos.forEach(repo => {
+            const repoDiv = document.createElement('div');
+            repoDiv.style.border = '1px solid #ddd';
+            repoDiv.style.padding = '15px';
+            repoDiv.style.margin = '10px 0';
+            repoDiv.style.borderRadius = '5px';
+
+            repoDiv.innerHTML = `
+                <h3>${repo.name}</h3>
+                <p>${repo.description || 'No description'}</p>
+                <p>⭐ ${repo.stargazers_count} stars | Language: ${repo.language || 'Not specified'}</p>
+                <a href="${repo.html_url}" target="_blank">View on GitHub</a>
+            `;
+
+            container.appendChild(repoDiv);
+        });
+    });
 <script>
 const GITHUB_USERNAME = "AlbertG305; // 
 fetch(`https://api.github.com/users/${AlbertG305}`)
@@ -86,6 +118,7 @@ continuous learning;
 </body>
 </html>
 ```
+
 
 
 
