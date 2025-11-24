@@ -34,12 +34,7 @@
 
     <section>
         <h2>About Me</h2>
-        <p>An analytically driven problem-solver emerging in cybersecurity, driven by a passion for
-forensic troubleshooting. Building foundational expertise through Network+ studies, I specialize
-in dissecting complex technical challenges with a defender’s mindset. I thrive on revealing
-hidden weaknesses, analyzing network behavior, and turning chaotic incidents into clear
-solutions. My approach? Relentless curiosity, methodical investigation, and a commitment to
-continuous learning.</p>
+        <p>.</p>
     </section>
 
     <section>
@@ -50,7 +45,40 @@ continuous learning.</p>
     <footer>
         <p>© 2024 Albert</p>
     </footer>
+    ```html
+<script>
+console.log("Hello from JavaScript!");
+document.querySelector('h1').style.color = 'blue';
+</script>
+<script>
+const GITHUB_USERNAME = "AlbertG305; // 
+fetch(`https://api.github.com/users/${AlbertG305}`)
+    .then(response => response.json())
+    .then(data => {
+        // Update the heading with your real name
+        document.querySelector(Albert G).textContent = data.name || data.login;
+
+        // Update the "About Me" section
+        const aboutSection = document.querySelector('section p');
+        if (aboutSection) {
+            aboutSection.textContent = data.bio || An analytically driven problem-solver emerging in cybersecurity, driven by a passion for
+forensic troubleshooting. Building foundational expertise through Network+ studies, I specialize
+in dissecting complex technical challenges with a defender’s mindset. I thrive on revealing
+hidden weaknesses, analyzing network behavior, and turning chaotic incidents into clear
+solutions. My approach? Relentless curiosity, methodical investigation, and a commitment to
+continuous learning;
+        }
+
+        console.log("GitHub data loaded:", data);
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Could not load GitHub data. Check your username!");
+    });
+</script>
+
 </body>
 </html>
 ```
+
 
