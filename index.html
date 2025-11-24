@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Portfolio</title>
 </head>
-    ``html
+
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -55,7 +55,14 @@
 <script>
 console.log("Hello from JavaScript!");
 document.querySelector('h1').style.color = 'blue';
-</script>// Fetch your repositories
+</script>
+<script>
+const GITHUB_USERNAME = "AlbertG305; // 
+fetch(`https://api.github.com/users/${AlbertG305}`)
+    .then(response => response.json())
+    .then(data => {
+        // Update the heading with your real name
+        document.querySelector(Albert G).textContent = data.name || data.login;// Fetch your repositories
 fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos`)
     .then(response => response.json())
     .then(repos => {
@@ -88,13 +95,6 @@ fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos`)
             container.appendChild(repoDiv);
         });
     });
-<script>
-const GITHUB_USERNAME = "AlbertG305; // 
-fetch(`https://api.github.com/users/${AlbertG305}`)
-    .then(response => response.json())
-    .then(data => {
-        // Update the heading with your real name
-        document.querySelector(Albert G).textContent = data.name || data.login;
 
         // Update the "About Me" section
         const aboutSection = document.querySelector('section p');
@@ -118,6 +118,7 @@ continuous learning;
 </body>
 </html>
 ```
+
 
 
 
